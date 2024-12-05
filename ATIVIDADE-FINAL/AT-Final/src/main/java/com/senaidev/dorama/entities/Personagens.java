@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +25,10 @@ public class Personagens {
 		
 		@Column(name = "pontoForte",nullable = false)
 		private String pontoForte;
+		
+		@ManyToOne
+		@JoinColumn(name = "DORAMA_id_dorama")
+		private Dorama dorama;
 		
 		//CONTRUTORES
 		public Personagens() {
